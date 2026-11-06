@@ -12,11 +12,19 @@ function setup() {
 function draw() {
   background(220);
   fill(0);
+  
 
   // ----- Built-in functions that return -----
-  // dist() returns a number, so we can store it or use it directly
+  // dist() "return"s a number, so we can store it or use it directly
   let distance = dist(mouseX, mouseY, 300, 450);
   text(`Distance from mouse to the middle circle: ${round(distance)}`, 20, 40);
+
+  // random() "return"s a number as well:
+  //circle(random(width), random(height), 50);
+  
+  console.log(isTheBest("Mr K"));
+
+
 
   // ----- Our own function that returns -----
   let answer = addNumbers(5, 3);
@@ -41,7 +49,15 @@ function draw() {
 function addNumbers(numOne, numTwo) {
   let total = numOne + numTwo;
   return total;
+  rect(100, 100, 50, 50); // this will never be reached!
 }
+
+
+function isTheBest(name){
+  let message = name + " is the best!";
+  return message;
+}
+
 
 // returns green, yellow or red depending on how close the mouse is
 function distanceColour(xPos, yPos) {
@@ -56,4 +72,7 @@ function distanceColour(xPos, yPos) {
   else {
     return color(255, 0, 0);
   }
+
+  console.log("Will this ever be reached?");
+
 }

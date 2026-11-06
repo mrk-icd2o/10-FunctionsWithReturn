@@ -23,7 +23,7 @@ Our own functions can return any type of value (number, string, boolean etc.) us
 ```javascript
 function addNumbers(numOne, numTwo) {
   let total = numOne + numTwo;
-  return total;
+  return total; // function ends at this point
 }
 ```
 
@@ -37,6 +37,14 @@ circle(addNumbers(100, 50), 200, 50);   // circle at x = 150
 
 When a function reaches `return`, it **stops** and sends the value back. Any code after the `return` line will not run.
 
+```javascript
+function addNumbers(numOne, numTwo) {
+  let total = numOne + numTwo;
+  return total;
+  
+  rect(100, 100, 50, 50); // this will never be reached!
+}
+```
 ## Another Example
 
 The function below:
@@ -61,6 +69,8 @@ function distanceColour(xPos, yPos) {
 }
 ```
 
+Note that there are multiple `return` lines.  This is possible (in branching situations), but remember as soon as *one* is reached the function is over.  
+
 The function is called where we would normally choose the fill colour:
 
 ```javascript
@@ -73,4 +83,3 @@ circle(450, 300, 80);
 
 Because it's a function, it can be used for every circle, and each call returns a different colour depending on that circle's position.
 
-> **AP CSP:** In the AP exam's pseudocode, a procedure returns a value with `RETURN(expression)`. It works the same way.
